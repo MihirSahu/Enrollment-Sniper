@@ -5,9 +5,6 @@
 
 # Import modules
 import time
-import requests
-from tkinter import *
-from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -22,7 +19,7 @@ driver = webdriver.Chrome()
 username = ""
 password = ""
 term = ""
-class_name = ""
+class_subject = ""
 class_number = ""
 
 # Functions
@@ -75,7 +72,7 @@ def searchForClass():
     Select(driver.find_element(By.CSS_SELECTOR, "select[name='CLASS_SRCH_WRK2_STRM$35$']")).select_by_visible_text(term)
     time.sleep(2)
     # Select subject
-    Select(driver.find_element(By.CSS_SELECTOR, "select[name='SSR_CLSRCH_WRK_SUBJECT_SRCH$1']")).select_by_value(class_name)
+    Select(driver.find_element(By.CSS_SELECTOR, "select[name='SSR_CLSRCH_WRK_SUBJECT_SRCH$1']")).select_by_value(class_subject)
     time.sleep(2)
     # Enter class number
     driver.find_element(By.CSS_SELECTOR, "input[name='SSR_CLSRCH_WRK_CATALOG_NBR$2']").send_keys(class_number)
